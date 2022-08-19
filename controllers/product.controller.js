@@ -24,6 +24,11 @@ exports.createProduct = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getProducts = catchAsync(async( req, res, next) => {
-  
-})
+exports.getProducts = catchAsync(async (req, res, next) => {
+  const products = await Product.findAll();
+
+  res.status(201).json({
+    response: "success",
+    data: products,
+  });
+});
