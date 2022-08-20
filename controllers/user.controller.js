@@ -18,6 +18,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
   if (!newUser) {
     return next(new AppError("Can't create user", 404));
   }
+  newUser.password = undefined;
 
   res.status(201).json({
     status: "success",
