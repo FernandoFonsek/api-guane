@@ -29,6 +29,6 @@ exports.getProducts = catchAsync(async (req, res, next) => {
 
   res.status(201).json({
     response: "success",
-    data: products,
+    products,
   });
 });
